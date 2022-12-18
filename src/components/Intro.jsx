@@ -2,7 +2,7 @@ import React from "react";
 
 function Intro() {
   return (
-    <div className="flex flex-col items-center justify-center text-center pb-6 pt20">
+    <div className="flex flex-col items-center justify-center text-center pb-6 pt-20">
       <h1 className="font-bold text-4xl mb-1">Lester</h1>
       <p className="font-medium text-base mb-3 ">Software & Data Engineer</p>
       <p className="font-bold mb-6 text-sm">
