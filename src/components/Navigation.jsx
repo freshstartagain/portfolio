@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function Nav() {
+function Navigation() {
   const [theme, setTheme] = useState(null);
 
   useEffect(() => {
@@ -62,25 +62,25 @@ function Nav() {
       <div>
         <a
           href="#profile"
-          className="font-semibold hover:text-black text-2xl no-underline text-black"
+          className="dark:text-white dark:hover:text-white font-semibold hover:text-black text-2xl no-underline text-black"
         >
           Profile
         </a>
         <a
           href="#timeline"
-          className="font-semibold hover:text-black text-sky-700 text-2xl no-underline ml-10"
+          className="dark:text-gray-500 dark:hover:text-white font-semibold hover:text-black text-sky-700 text-2xl no-underline ml-10"
         >
           Timeline
         </a>
         <a
           href="#tools"
-          className="font-semibold hover:text-black text-sky-700 text-2xl no-underline ml-10"
+          className="dark:text-gray-500 dark:hover:text-white font-semibold hover:text-black text-sky-700 text-2xl no-underline ml-10"
         >
           Tools
         </a>
         <a
           href="#contacts"
-          className="font-semibold hover:text-black text-sky-700 text-2xl no-underline ml-10"
+          className="dark:text-gray-500 dark:hover:text-white font-semibold hover:text-black text-sky-700 text-2xl no-underline ml-10"
         >
           Contacts
         </a>
@@ -98,4 +98,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default Navigation;
