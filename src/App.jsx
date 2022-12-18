@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Nav from "./components/Navigation";
 import Intro from "./components/Intro";
 import Timeline from "./components/Timeline";
@@ -7,16 +6,16 @@ import Contacts from "./components/Contacts";
 import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="max-w-5xl w-11/12 mx-auto">
-      <Nav />
-      <Intro />
-      <Timeline />
-      <Tools />
-      <Contacts />
-      <Footer />
+    <div className="bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-300 min-h-screen font-inter">
+      <div className="max-w-5xl w-11/12 mx-auto dark:bg-stone-900">
+        <Nav />
+        <Intro />
+        <Timeline />
+        <Tools />
+        <Contacts />
+        <Footer />
+      </div>
     </div>
   );
 }
