@@ -5,7 +5,7 @@ export default [
     company: "goPassport",
     duration: "1 year 1 month",
     details:
-      "Determining data storage needs and building a data warehouse for internal departments, as well as creating and enhancing data solutions to enable seamless data delivery. Developing complex applications to extract, transform, and load data, and creating API endpoints using Azure technologies",
+      "Determining data storage needs and building a data warehouse for internal departments, as well as creating and enhancing data solutions to enable seamless data delivery. Developing complex applications to extract, transform, and load data, and creating API endpoints using Azure technologies.",
   },
   {
     year: "2019",

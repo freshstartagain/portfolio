@@ -58,7 +58,7 @@ function Navigation() {
   );
 
   return (
-    <nav className="bg-white dark:bg-stone-900 flex flex-col sticky top-0 text-center sm:flex-row sm:text-left sm:justify-between py-5 px-5 w-full">
+    <nav className="bg-white dark:bg-stone-900 flex flex-col sticky top-0 text-center sm:flex-row sm:text-left sm:justify-between py-5 px-5 w-full z-50">
       <div>
         <a
           href="#profile"
