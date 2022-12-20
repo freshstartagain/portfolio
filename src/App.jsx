@@ -2,7 +2,6 @@ import Navigation from "./components/Navigation";
 import Intro from "./components/Intro";
 import Timeline from "./components/Timeline";
 import Tools from "./components/Tools";
-import Contacts from "./components/Contacts";
 import Footer from "./components/Footer";
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
         <Intro />
         <Timeline />
         <Tools />
-        <Contacts />
         <Footer />
       </div>
     </div>

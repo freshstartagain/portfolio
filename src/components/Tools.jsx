@@ -3,7 +3,7 @@ import Title from "./Title";
 
 function Tools() {
   return (
-    <div className="flex flex-col items-center justify-center my-20 pb-6">
+    <div className="flex flex-col items-center justify-center my-20">
       <div className="md:w-7/12 w-full">
         <Title>Tools</Title>
         {/* Frontend */}
