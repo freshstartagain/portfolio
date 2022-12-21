@@ -10,6 +10,7 @@ function Timeline() {
         <Title>Timeline</Title>
         {timeline.map((item) => (
           <TimelineItem
+            key={item.id}
             year={item.year}
             title={item.title}
             company={item.company}

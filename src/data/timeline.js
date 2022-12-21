@@ -1,5 +1,6 @@
 export default [
   {
+    id:"A98DB",
     year: "2020",
     title: "Data Engineer",
     company: "goPassport",
@@ -8,6 +9,7 @@ export default [
       "Determining data storage needs and building a data warehouse for internal departments, as well as creating and enhancing data solutions to enable seamless data delivery. Developing complex applications to extract, transform, and load data, and creating API endpoints using Azure technologies.",
   },
   {
+    id:"4VET2",
     year: "2019",
     title: "Junior Data Engineer",
     company: "Pynotech Solutions Inc.",
@@ -16,6 +18,7 @@ export default [
       "Designing, maintaining, and optimizing a stable and reliable database system. Creating ETL/ELT pipelines to facilitate data management and support users in their data-related needs.",
   },
   {
+    id:"U1FPG",
     year: "2019",
     title: "IT Assistant",
     company: "Rural Bank of Pilar",
@@ -24,6 +27,7 @@ export default [
       "Maintaining and managing the bank's information technology systems and networks, including installing and configuring computer systems, diagnosing hardware and software faults, solving technical and application problems, and recommending purchases of hardware and software.",
   },
   {
+    id:"BLG5T",
     year: "2018",
     title: "IT Staff",
     company: "LGU Pilar Sorsogon",
