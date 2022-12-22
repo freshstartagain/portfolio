@@ -1,3 +1,4 @@
+import React from "react";
 import Navigation from "./components/Navigation";
 import Intro from "./components/Intro";
 import Timeline from "./components/Timeline";

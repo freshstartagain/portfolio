@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function TimelineItem({year, title, company, duration, details }) {
+function TimelineItem({ year, title, company, duration, details }) {
   return (
     <ol className="border-l border-stone-200 dark:border-stone-700 flex flex-col md:flex-row relative">
       <li className="mb-10 ml-4">
@@ -26,5 +27,21 @@ function TimelineItem({year, title, company, duration, details }) {
     </ol>
   );
 }
+
+TimelineItem.propTypes = {
+  year: PropTypes.any,
+  title: PropTypes.any,
+  company: PropTypes.any,
+  duration: PropTypes.any,
+  details: PropTypes.any,
+};
+
+TimelineItem.defaultProps = {
+  year: "",
+  title: "",
+  company: "",
+  duration: "",
+  details: "",
+};
 
 export default TimelineItem;

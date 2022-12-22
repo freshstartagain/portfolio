@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 function Navigation() {
   const [theme, setTheme] = useState(null);
@@ -11,9 +11,9 @@ function Navigation() {
     }
   }, []);
 
-  const handleThemeSwitch = () => {
+  const handleThemeSwitch = useCallback(() => {
     setTheme(theme === "dark" ? "light" : "dark");
-  };
+  });
 
   useEffect(() => {
     if (theme === "dark") {
