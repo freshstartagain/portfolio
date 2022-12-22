@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function Title({ children, id }) {
   return (
@@ -10,5 +11,15 @@ function Title({ children, id }) {
     </h1>
   );
 }
+
+Title.propTypes = {
+  children: PropTypes.any,
+  id: PropTypes.any,
+};
+
+Title.defaultProps = {
+  children: "",
+  id: "",
+};
 
 export default Title;
