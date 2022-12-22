@@ -28,20 +28,20 @@ function TimelineItem({ year, title, company, duration, details }) {
   );
 }
 
-TimelineItem.propTypes = {
-  year: PropTypes.any,
-  title: PropTypes.any,
-  company: PropTypes.any,
-  duration: PropTypes.any,
-  details: PropTypes.any,
-};
+// TimelineItem.propTypes = {
+//   year: PropTypes.any,
+//   title: PropTypes.any,
+//   company: PropTypes.any,
+//   duration: PropTypes.any,
+//   details: PropTypes.any,
+// };
 
-TimelineItem.defaultProps = {
-  year: "",
-  title: "",
-  company: "",
-  duration: "",
-  details: "",
-};
+// TimelineItem.defaultProps = {
+//   year: "",
+//   title: "",
+//   company: "",
+//   duration: "",
+//   details: "",
+// };
 
 export default TimelineItem;
