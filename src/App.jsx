@@ -7,9 +7,11 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-300 min-h-screen font-inter">
-      <div className="max-w-5xl w-11/12 mx-auto dark:bg-stone-900">
+    <div className="min-h-screen bg-white font-inter text-stone-900 dark:bg-stone-900 dark:text-stone-300">
+      <div className="sticky top-0 z-50 md:mx-auto md:w-11/12 md:max-w-5xl ">
         <Navigation />
+      </div>
+      <div className="mx-auto w-11/12 max-w-5xl">
         <Intro />
         <Timeline />
         <Tools />

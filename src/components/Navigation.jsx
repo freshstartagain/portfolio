@@ -1,7 +1,9 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 
 function Navigation() {
   const [theme, setTheme] = useState(null);
+  const [navVisible, setNavVisible] = useState(false);
+  const navButtonRef = useRef();
 
   useEffect(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -15,6 +17,16 @@ function Navigation() {
     setTheme(theme === "dark" ? "light" : "dark");
   });
 
+  const handleShowNav = useCallback(() => {
+    setNavVisible(!navVisible);
+  });
+
+  const handleClickOutside = (e) => {
+    if (!navButtonRef.current.contains(e.target)) {
+      setNavVisible(false);
+    }
+  };
+
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -23,6 +35,11 @@ function Navigation() {
     }
   }, [theme]);
 
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  });
+
   const sun = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +47,7 @@ function Navigation() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
+      className="h-6 w-6"
     >
       <path
         strokeLinecap="round"
@@ -47,7 +64,7 @@ function Navigation() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="white"
-      className="w-6 h-6"
+      className="h-6 w-6"
     >
       <path
         strokeLinecap="round"
@@ -58,38 +75,66 @@ function Navigation() {
   );
 
   return (
-    <nav className="bg-white dark:bg-stone-900 flex flex-col sticky top-0 text-center sm:flex-row sm:text-left sm:justify-between py-5 px-5 w-full z-50">
+    <nav className="flex w-full flex-row-reverse bg-white py-5 px-5 dark:bg-stone-900 md:flex-row md:justify-between">
+      <div
+        className={`${
+          navVisible ? "" : "hidden"
+        } absolute mt-10 rounded-lg border border-gray-500 bg-gray-800 p-3 text-xl md:static md:mt-0 md:block md:border-none md:bg-transparent md:p-0 md:text-2xl`}
+      >
+        <ul className="flex flex-col md:flex-row">
+          <li>
+            <a
+              href="#profile"
+              className="font-semibold text-black no-underline hover:text-black dark:text-white dark:hover:text-white"
+            >
+              Profile
+            </a>
+          </li>
+          <li>
+            <a
+              href="#timeline"
+              className="font-semibold text-sky-700 no-underline hover:text-black dark:text-gray-500 dark:hover:text-white md:ml-10"
+            >
+              Timeline
+            </a>
+          </li>
+          <li>
+            <a
+              href="#tools"
+              className="font-semibold text-sky-700 no-underline hover:text-black dark:text-gray-500 dark:hover:text-white md:ml-10"
+            >
+              Tools
+            </a>
+          </li>
+        </ul>
+      </div>
       <div>
-        <a
-          href="#profile"
-          className="dark:text-white dark:hover:text-white font-semibold hover:text-black text-2xl no-underline text-black"
+        <button
+          type="button"
+          onClick={handleShowNav}
+          ref={navButtonRef}
+          className="right-20 top-4 z-10 ml-3 rounded-md p-1 text-lg text-gray-500 md:hidden"
         >
-          Profile
-        </a>
-        <a
-          href="#timeline"
-          className="dark:text-gray-500 dark:hover:text-white font-semibold hover:text-black text-sky-700 text-2xl no-underline ml-10"
-        >
-          Timeline
-        </a>
-        <a
-          href="#tools"
-          className="dark:text-gray-500 dark:hover:text-white font-semibold hover:text-black text-sky-700 text-2xl no-underline ml-10"
-        >
-          Tools
-        </a>
-        <a
-          href="#contacts"
-          className="dark:text-gray-500 dark:hover:text-white font-semibold hover:text-black text-sky-700 text-2xl no-underline ml-10"
-        >
-          Contacts
-        </a>
+          <svg
+            className="h-6 w-6"
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clipRule="evenodd"
+            ></path>
+          </svg>
+        </button>
       </div>
       <div className="mb-2 sm:mb-0">
         <button
           type="button"
           onClick={handleThemeSwitch}
-          className="p-2 z-10 right-20 top-4 bg-violet-300 dark:bg-orange-300 text-lg p-1 rounded-md"
+          className="right-20 top-4 z-10 rounded-md bg-violet-300 p-1 text-lg dark:bg-orange-300 dark:text-black"
         >
           {theme === "dark" ? sun : moon}
         </button>

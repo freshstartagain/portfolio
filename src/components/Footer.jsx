@@ -3,15 +3,15 @@ import React from "react";
 function Footer() {
   return (
     <div className="py-5 text-center">
-      <div className="container max-w-screen-lg mx-auto">
+      <div className="container mx-auto max-w-screen-lg">
         <div>
           <div className="flex flex-wrap justify-center gap-2">
             <a
               href="https://www.linkedin.com/in/christian-lester-cayabyab-6b7849168/"
-              className="bg-stone-400 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full"
+              className="inline-flex items-center space-x-2 rounded-full bg-stone-400 p-2 font-semibold text-white"
             >
               <svg
-                className="w-5 h-5 fill-current"
+                className="h-5 w-5 fill-current"
                 role="img"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,7 @@ function Footer() {
             </a>
             <a
               href="https://github.com/freshstartagain"
-              className="bg-stone-400 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full"
+              className="inline-flex items-center space-x-2 rounded-full bg-stone-400 p-2 font-semibold text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <p className="text-sm mt-2  opacity-50">
+      <p className="mt-2 text-sm  opacity-50">
         &copy; {new Date().getFullYear()} Lester. All rights reserved.
       </p>
     </div>
