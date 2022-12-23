@@ -7,8 +7,8 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-300 min-h-screen font-inter">
-      <div className="max-w-5xl w-11/12 mx-auto dark:bg-stone-900">
+    <div className="min-h-screen bg-white font-inter text-stone-900 dark:bg-stone-900 dark:text-stone-300">
+      <div className="mx-auto w-11/12 max-w-5xl dark:bg-stone-900">
         <Navigation />
         <Intro />
         <Timeline />

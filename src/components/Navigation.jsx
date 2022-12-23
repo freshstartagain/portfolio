@@ -30,7 +30,7 @@ function Navigation() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
+      className="h-6 w-6"
     >
       <path
         strokeLinecap="round"
@@ -47,7 +47,7 @@ function Navigation() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="white"
-      className="w-6 h-6"
+      className="h-6 w-6"
     >
       <path
         strokeLinecap="round"
@@ -58,38 +58,32 @@ function Navigation() {
   );
 
   return (
-    <nav className="bg-white dark:bg-stone-900 flex flex-col sticky top-0 text-center sm:flex-row sm:text-left sm:justify-between py-5 px-5 w-full z-50">
-      <div>
+    <nav className="sticky top-0 z-50 flex w-full flex-col bg-white py-5 px-5 dark:bg-stone-900 md:flex-row md:justify-between md:text-left ">
+      <div className="hidden w-full md:block md:w-auto">
         <a
           href="#profile"
-          className="dark:text-white dark:hover:text-white font-semibold hover:text-black text-2xl no-underline text-black"
+          className="text-2xl font-semibold text-black no-underline hover:text-black dark:text-white dark:hover:text-white"
         >
           Profile
         </a>
         <a
           href="#timeline"
-          className="dark:text-gray-500 dark:hover:text-white font-semibold hover:text-black text-sky-700 text-2xl no-underline ml-10"
+          className="ml-10 text-2xl font-semibold text-sky-700 no-underline hover:text-black dark:text-gray-500 dark:hover:text-white"
         >
           Timeline
         </a>
         <a
           href="#tools"
-          className="dark:text-gray-500 dark:hover:text-white font-semibold hover:text-black text-sky-700 text-2xl no-underline ml-10"
+          className="ml-10 text-2xl font-semibold text-sky-700 no-underline hover:text-black dark:text-gray-500 dark:hover:text-white"
         >
           Tools
-        </a>
-        <a
-          href="#contacts"
-          className="dark:text-gray-500 dark:hover:text-white font-semibold hover:text-black text-sky-700 text-2xl no-underline ml-10"
-        >
-          Contacts
         </a>
       </div>
       <div className="mb-2 sm:mb-0">
         <button
           type="button"
           onClick={handleThemeSwitch}
-          className="p-2 z-10 right-20 top-4 bg-violet-300 dark:bg-orange-300 text-lg p-1 rounded-md"
+          className="right-20 top-4 z-10 rounded-md bg-violet-300 p-2 p-1 text-lg dark:bg-orange-300"
         >
           {theme === "dark" ? sun : moon}
         </button>

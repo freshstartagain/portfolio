@@ -5,7 +5,7 @@ function Title({ children, id }) {
   return (
     <h1
       id={id && id}
-      className="dark:text-white decoration-4 font-bold mb-5 text-stone-900 text-2xl underline underline-offset-8"
+      className="mb-5 text-2xl font-bold text-stone-900 underline decoration-4 underline-offset-8 dark:text-white"
     >
       {children}
     </h1>
