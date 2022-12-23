@@ -1,7 +1,9 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 
 function Navigation() {
   const [theme, setTheme] = useState(null);
+  const [navVisible, setNavVisible] = useState(false);
+  const navButtonRef = useRef();
 
   useEffect(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -15,6 +17,16 @@ function Navigation() {
     setTheme(theme === "dark" ? "light" : "dark");
   });
 
+  const handleShowNav = useCallback(() => {
+    setNavVisible(!navVisible);
+  });
+
+  const handleClickOutside = (e) => {
+    if (!navButtonRef.current.contains(e.target)) {
+      setNavVisible(false);
+    }
+  };
+
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -22,6 +34,11 @@ function Navigation() {
       document.documentElement.classList.remove("dark");
     }
   }, [theme]);
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  });
 
   const sun = (
     <svg
@@ -58,43 +75,57 @@ function Navigation() {
   );
 
   return (
-    <nav className="flex w-full flex-row-reverse bg-white py-5 px-5 dark:bg-stone-900 md:flex-row md:justify-between md:text-left">
-      <div className="hidden w-full md:block md:w-auto">
-        <a
-          href="#profile"
-          className="text-2xl font-semibold text-black no-underline hover:text-black dark:text-white dark:hover:text-white"
-        >
-          Profile
-        </a>
-        <a
-          href="#timeline"
-          className="ml-10 text-2xl font-semibold text-sky-700 no-underline hover:text-black dark:text-gray-500 dark:hover:text-white"
-        >
-          Timeline
-        </a>
-        <a
-          href="#tools"
-          className="ml-10 text-2xl font-semibold text-sky-700 no-underline hover:text-black dark:text-gray-500 dark:hover:text-white"
-        >
-          Tools
-        </a>
+    <nav className="flex w-full flex-row-reverse bg-white py-5 px-5 dark:bg-stone-900 md:flex-row md:justify-between">
+      <div
+        className={`${
+          navVisible ? "" : "hidden"
+        } absolute mt-10 rounded-lg border border-gray-500 bg-gray-800 p-3 text-xl md:static md:mt-0 md:block md:border-none md:bg-transparent md:p-0 md:text-2xl`}
+      >
+        <ul className="flex flex-col md:flex-row">
+          <li>
+            <a
+              href="#profile"
+              className="font-semibold text-black no-underline hover:text-black dark:text-white dark:hover:text-white"
+            >
+              Profile
+            </a>
+          </li>
+          <li>
+            <a
+              href="#timeline"
+              className="font-semibold text-sky-700 no-underline hover:text-black dark:text-gray-500 dark:hover:text-white md:ml-10"
+            >
+              Timeline
+            </a>
+          </li>
+          <li>
+            <a
+              href="#tools"
+              className="font-semibold text-sky-700 no-underline hover:text-black dark:text-gray-500 dark:hover:text-white md:ml-10"
+            >
+              Tools
+            </a>
+          </li>
+        </ul>
       </div>
       <div>
         <button
           type="button"
-          class="right-20 top-4 z-10 ml-3 rounded-md p-1 text-lg text-gray-500 md:hidden"
+          onClick={handleShowNav}
+          ref={navButtonRef}
+          className="right-20 top-4 z-10 ml-3 rounded-md p-1 text-lg text-gray-500 md:hidden"
         >
           <svg
-            class="h-6 w-6"
+            className="h-6 w-6"
             aria-hidden="true"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>
         </button>
