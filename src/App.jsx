@@ -8,8 +8,10 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="min-h-screen bg-white font-inter text-stone-900 dark:bg-stone-900 dark:text-stone-300">
-      <Navigation />
-      <div className="mx-auto w-11/12 max-w-5xl dark:bg-stone-900">
+      <div className="sticky top-0 z-50 md:mx-auto md:w-11/12 md:max-w-5xl ">
+        <Navigation />
+      </div>
+      <div className="mx-auto w-11/12 max-w-5xl">
         <Intro />
         <Timeline />
         <Tools />
