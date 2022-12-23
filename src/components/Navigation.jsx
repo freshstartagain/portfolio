@@ -58,7 +58,7 @@ function Navigation() {
   );
 
   return (
-    <nav className="sticky top-0 z-50 flex w-full flex-col bg-white py-5 px-5 dark:bg-stone-900 md:flex-row md:justify-between md:text-left ">
+    <nav className="sticky top-0 z-50 flex w-full flex-row-reverse bg-white py-5 px-5 dark:bg-stone-900 md:flex-row md:justify-between md:text-left">
       <div className="hidden w-full md:block md:w-auto">
         <a
           href="#profile"
@@ -79,11 +79,31 @@ function Navigation() {
           Tools
         </a>
       </div>
+      <div>
+        <button
+          type="button"
+          class="right-20 top-4 z-10 ml-3 rounded-md p-1 text-lg text-gray-500 md:hidden"
+        >
+          <svg
+            class="h-6 w-6"
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
       <div className="mb-2 sm:mb-0">
         <button
           type="button"
           onClick={handleThemeSwitch}
-          className="right-20 top-4 z-10 rounded-md bg-violet-300 p-2 p-1 text-lg dark:bg-orange-300"
+          className="right-20 top-4 z-10 rounded-md bg-violet-300 p-1 text-lg dark:bg-orange-300 dark:text-black"
         >
           {theme === "dark" ? sun : moon}
         </button>
