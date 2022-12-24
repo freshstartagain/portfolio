@@ -11,7 +11,7 @@ function Tools() {
           <h1 className="mb-5 text-2xl font-bold text-stone-900 dark:text-white">
             Frontend
           </h1>
-          <div className="my-10 grid grid-cols-4 gap-20">
+          <div className="my-10 grid grid-cols-2 gap-20 md:grid-cols-4">
             <div>
               <svg viewBox="0 0 128 128">
                 <g fill="#61DAFB">
@@ -51,7 +51,7 @@ function Tools() {
           <h1 className="mb-5 text-2xl font-bold text-stone-900 dark:text-white">
             Backend
           </h1>
-          <div className="my-10 grid grid-cols-4 gap-20">
+          <div className="my-10 grid grid-cols-2 gap-20 md:grid-cols-4">
             <div>
               <svg viewBox="0 0 128 128">
                 <linearGradient
@@ -147,7 +147,7 @@ function Tools() {
           <h1 className="mb-5 text-2xl font-bold text-stone-900 dark:text-white">
             Dev Ops
           </h1>
-          <div className="my-10 grid grid-cols-4 gap-20">
+          <div className="my-10 grid grid-cols-2 gap-20 md:grid-cols-4">
             <div>
               <svg viewBox="0 0 128 128">
                 <g className="fill-dark dark:fill-white">
@@ -268,54 +268,12 @@ function Tools() {
           <h1 className="mb-5 text-2xl font-bold text-stone-900 dark:text-white">
             Project Management
           </h1>
-          <div className="my-10 grid grid-cols-4 gap-20">
+          <div className="my-10 grid grid-cols-2 gap-20 md:grid-cols-4">
             <div>
               <svg viewBox="0 0 128 128">
                 <path
                   fill="#23719F"
                   d="M127 16.142C127 7.779 120.221 1 111.858 1H16.142C7.779 1 1 7.779 1 16.142v95.715C1 120.221 7.779 127 16.142 127h95.716c8.363 0 15.142-6.779 15.142-15.143V16.142zM58 99.54c0 3.807-3.286 6.46-7.093 6.46H23.563C19.756 106 17 103.347 17 99.54V23.23c0-3.808 2.756-7.23 6.563-7.23h27.344C54.714 16 58 19.422 58 23.23v76.31zm55-66.456V64.97c0 3.807-2.936 7.03-6.744 7.03h-27.33C75.118 72 72 68.776 72 64.97V22.866C72 19.058 75.118 16 78.926 16h27.33c3.808 0 6.744 3.058 6.744 6.866v10.218z"
-                ></path>
-              </svg>
-            </div>
-            <div>
-              <svg viewBox="0 0 128 128">
-                <defs>
-                  <linearGradient
-                    id="jira-original-a"
-                    gradientUnits="userSpaceOnUse"
-                    x1="22.034"
-                    y1="9.773"
-                    x2="17.118"
-                    y2="14.842"
-                    gradientTransform="scale(4)"
-                  >
-                    <stop offset=".176" stopColor="#0052cc"></stop>
-                    <stop offset="1" stopColor="#2684ff"></stop>
-                  </linearGradient>
-                  <linearGradient
-                    id="jira-original-b"
-                    gradientUnits="userSpaceOnUse"
-                    x1="16.641"
-                    y1="15.564"
-                    x2="10.957"
-                    y2="21.094"
-                    gradientTransform="scale(4)"
-                  >
-                    <stop offset=".176" stopColor="#0052cc"></stop>
-                    <stop offset="1" stopColor="#2684ff"></stop>
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M108.023 16H61.805c0 11.52 9.324 20.848 20.847 20.848h8.5v8.226c0 11.52 9.328 20.848 20.848 20.848V19.977A3.98 3.98 0 00108.023 16zm0 0"
-                  fill="#2684ff"
-                ></path>
-                <path
-                  d="M85.121 39.04H38.902c0 11.519 9.325 20.847 20.844 20.847h8.504v8.226c0 11.52 9.328 20.848 20.848 20.848V43.016a3.983 3.983 0 00-3.977-3.977zm0 0"
-                  fill="url(#jira-original-a)"
-                ></path>
-                <path
-                  d="M62.219 62.078H16c0 11.524 9.324 20.848 20.848 20.848h8.5v8.23c0 11.52 9.328 20.844 20.847 20.844V66.059a3.984 3.984 0 00-3.976-3.98zm0 0"
-                  fill="url(#jira-original-b)"
                 ></path>
               </svg>
             </div>
