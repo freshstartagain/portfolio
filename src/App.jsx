@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white font-inter text-stone-900 dark:bg-stone-900 dark:text-stone-300">
+    <div className="min-h-screen bg-white font-inter text-stone-900 dark:bg-[#261C2C] dark:text-stone-300">
       <div className="sticky top-0 z-50 md:mx-auto md:w-11/12 md:max-w-5xl ">
         <Navigation />
       </div>
