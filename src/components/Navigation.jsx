@@ -75,11 +75,11 @@ function Navigation() {
   );
 
   return (
-    <nav className="flex w-full flex-row-reverse bg-white py-5 px-5 dark:bg-stone-900 md:flex-row md:justify-between">
+    <nav className="flex w-full flex-row-reverse bg-white py-5 px-5 dark:bg-[#261C2C] md:flex-row md:justify-between">
       <div
         className={`${
           navVisible ? "" : "hidden"
-        } absolute mt-10 rounded-lg border border-gray-500 bg-gray-800 p-3 text-xl md:static md:mt-0 md:block md:border-none md:bg-transparent md:p-0 md:text-2xl`}
+        } absolute mt-12 rounded-lg border border-[#F8EDE3] bg-[#F8EDE3] p-3 text-xl dark:border-[#3E2C41] dark:bg-[#3E2C41] md:static md:mt-0 md:block md:border-none md:bg-transparent md:p-0 md:text-2xl md:dark:bg-transparent`}
       >
         <ul className="flex flex-col md:flex-row">
           <li>
@@ -93,7 +93,7 @@ function Navigation() {
           <li>
             <a
               href="#timeline"
-              className="font-semibold text-sky-700 no-underline hover:text-black dark:text-gray-500 dark:hover:text-white md:ml-10"
+              className="font-semibold text-[#85586F] no-underline hover:text-black dark:text-[#5C527F] dark:hover:text-white md:ml-10"
             >
               Timeline
             </a>
@@ -101,7 +101,7 @@ function Navigation() {
           <li>
             <a
               href="#tools"
-              className="font-semibold text-sky-700 no-underline hover:text-black dark:text-gray-500 dark:hover:text-white md:ml-10"
+              className="font-semibold text-[#85586F] no-underline hover:text-black dark:text-[#5C527F] dark:hover:text-white md:ml-10"
             >
               Tools
             </a>
@@ -113,7 +113,7 @@ function Navigation() {
           type="button"
           onClick={handleShowNav}
           ref={navButtonRef}
-          className="right-20 top-4 z-10 ml-3 rounded-md p-1 text-lg text-gray-500 md:hidden"
+          className="right-20 top-4 z-10 ml-3 rounded-md p-1 text-lg text-[#85586F] dark:text-[#5C527F] md:hidden"
         >
           <svg
             className="h-6 w-6"
@@ -134,7 +134,7 @@ function Navigation() {
         <button
           type="button"
           onClick={handleThemeSwitch}
-          className="right-20 top-4 z-10 rounded-md bg-violet-300 p-1 text-lg dark:bg-orange-300 dark:text-black"
+          className="right-20 top-4 z-10 rounded-md bg-[#261C2C] p-1 text-lg dark:bg-orange-200 dark:text-black"
         >
           {theme === "dark" ? sun : moon}
         </button>

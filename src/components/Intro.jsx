@@ -4,10 +4,10 @@ function Intro() {
   return (
     <div className="flex flex-col items-center justify-center pb-6 pt-20 text-center">
       <h1 className="mb-1 text-7xl font-bold dark:text-white">Lester</h1>
-      <p className="mb-3 text-base text-xl font-medium">
+      <p className="mb-3 text-base text-xl font-medium text-[#85586F] dark:text-[#5C527F]">
         Software & Data Engineer
       </p>
-      <p className="text-md max-w-xl font-bold">
+      <p className="text-md max-w-xl font-bold dark:text-white">
         Hi, my name is Lester and I am a software and data engineer with a
         diverse background in different industries. I have spent most of my
         career working in the government, bank, startup, and legal analytics

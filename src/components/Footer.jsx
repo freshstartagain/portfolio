@@ -8,7 +8,7 @@ function Footer() {
           <div className="flex flex-wrap justify-center gap-2">
             <a
               href="https://www.linkedin.com/in/christian-lester-cayabyab-6b7849168/"
-              className="inline-flex items-center space-x-2 rounded-full bg-stone-400 p-2 font-semibold text-white"
+              className="inline-flex items-center space-x-2 rounded-full bg-[#85586F] p-2 font-semibold text-white dark:bg-[#5C527F]"
             >
               <svg
                 className="h-5 w-5 fill-current"
@@ -23,7 +23,7 @@ function Footer() {
             </a>
             <a
               href="https://github.com/freshstartagain"
-              className="inline-flex items-center space-x-2 rounded-full bg-stone-400 p-2 font-semibold text-white"
+              className="inline-flex items-center space-x-2 rounded-full bg-[#85586F] p-2 font-semibold text-white dark:bg-[#5C527F]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <p className="mt-2 text-sm  opacity-50">
+      <p className="mt-2 text-sm text-[#85586F] opacity-50 dark:text-[#5C527F]">
         &copy; {new Date().getFullYear()} Lester. All rights reserved.
       </p>
     </div>
