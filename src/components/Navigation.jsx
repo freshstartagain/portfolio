@@ -79,7 +79,7 @@ function Navigation() {
       <div
         className={`${
           navVisible ? "" : "hidden"
-        } absolute mt-12 rounded-lg border border-[#F8EDE3] bg-[#F8EDE3] p-3 text-xl dark:border-[#3E2C41] dark:bg-[#3E2C41] md:static md:mt-0 md:block md:border-none md:bg-transparent md:p-0 md:text-2xl`}
+        } absolute mt-12 rounded-lg border border-[#F8EDE3] bg-[#F8EDE3] p-3 text-xl dark:border-[#3E2C41] dark:bg-[#3E2C41] md:static md:mt-0 md:block md:border-none md:bg-transparent md:p-0 md:text-2xl md:dark:bg-transparent`}
       >
         <ul className="flex flex-col md:flex-row">
           <li>
