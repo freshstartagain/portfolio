@@ -16,7 +16,7 @@ function TimelineItem({ year, title, company, duration, details }) {
           <span className="text-lg font-semibold text-stone-900 dark:text-white">
             {title}
           </span>
-          <span className="my-1 text-sm font-normal leading-none text-[#D0B8A8]dark:text-[#5C527F]">
+          <span className="text-[#D0B8A8]dark:text-[#5C527F] my-1 text-sm font-normal leading-none">
             {duration}
           </span>
         </p>
