@@ -4,7 +4,7 @@ function Intro() {
   return (
     <div className="flex flex-col items-center justify-center pb-6 pt-20 text-center">
       <h1 className="mb-1 text-7xl font-bold dark:text-white">Lester</h1>
-      <p className="mb-3 text-base text-xl font-medium dark:text-[#5C527F]">
+      <p className="mb-3 text-base text-xl font-medium text-[#85586F] dark:text-[#5C527F]">
         Software & Data Engineer
       </p>
       <p className="text-md max-w-xl font-bold dark:text-white">
