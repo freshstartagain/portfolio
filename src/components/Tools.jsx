@@ -277,7 +277,6 @@ const Tools = forwardRef((props, ref) => {
                 ></path>
               </svg>
             </div>
-            center{" "}
           </div>
         </div>
       </div>

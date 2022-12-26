@@ -23,6 +23,6 @@ const Timeline = forwardRef((props, ref) => {
   );
 });
 
-Timeline.displayName = 'Timeline';
+Timeline.displayName = "Timeline";
 
 export default Timeline;

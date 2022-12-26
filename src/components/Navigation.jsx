@@ -5,7 +5,15 @@ function Navigation({ introRef, timelineRef, toolsRef }) {
   const [theme, setTheme] = useState(null);
   const [navVisible, setNavVisible] = useState(false);
   const navButtonRef = useRef();
-  const scrollBehavior = { behavior: "smooth", block: "center" };
+  const defaultNavState = {
+    scrollBehavior: { behavior: "smooth", block: "center" },
+    introActive: true,
+    timelineActive: false,
+    toolsActive: false,
+  };
+  const [navState, setNavState] = useState(defaultNavState);
+
+  const { scrollBehavior, introActive, timelineActive, toolsActive } = navState;
 
   useEffect(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -26,6 +34,38 @@ function Navigation({ introRef, timelineRef, toolsRef }) {
   const handleClickOutside = (e) => {
     if (!navButtonRef.current.contains(e.target)) {
       setNavVisible(false);
+    }
+  };
+
+  const isNavItemActive = (ref, offset) =>
+    ref.current.offsetTop - window.scrollY < window.innerHeight / offset;
+
+  const handleScroll = () => {
+    if (window.scrollY >= 0 && window.scrollY <= window.innerHeight / 3) {
+      setNavState({
+        ...navState,
+        introActive: true,
+        timelineActive: false,
+        toolsActive: false,
+      });
+    }
+
+    if (isNavItemActive(timelineRef, 2.5)) {
+      setNavState({
+        ...navState,
+        introActive: false,
+        timelineActive: true,
+        toolsActive: false,
+      });
+    }
+
+    if (isNavItemActive(toolsRef, 3)) {
+      setNavState({
+        ...navState,
+        introActive: false,
+        timelineActive: false,
+        toolsActive: true,
+      });
     }
   };
 
@@ -52,6 +92,11 @@ function Navigation({ introRef, timelineRef, toolsRef }) {
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
+  });
+
+  useEffect(() => {
+    document.addEventListener("scroll", handleScroll);
+    return () => document.removeEventListener("scroll", handleScroll);
   });
 
   const sun = (
@@ -100,7 +145,11 @@ function Navigation({ introRef, timelineRef, toolsRef }) {
             <a
               href="#profile"
               onClick={scrollIntro}
-              className="font-semibold text-black no-underline hover:text-black dark:text-white dark:hover:text-white"
+              className={`font-semibold no-underline hover:text-black ${
+                introActive
+                  ? "text-black dark:text-white"
+                  : "text-[#85586F] dark:text-[#5C527F]"
+              } dark:hover:text-white`}
             >
               Profile
             </a>
@@ -109,7 +158,11 @@ function Navigation({ introRef, timelineRef, toolsRef }) {
             <a
               href="#timeline"
               onClick={scrollTimeline}
-              className="font-semibold text-[#85586F] no-underline hover:text-black dark:text-[#5C527F] dark:hover:text-white md:ml-10"
+              className={`font-semibold no-underline hover:text-black ${
+                timelineActive
+                  ? "text-black dark:text-white"
+                  : "text-[#85586F] dark:text-[#5C527F]"
+              } dark:hover:text-white md:ml-10`}
             >
               Timeline
             </a>
@@ -118,7 +171,11 @@ function Navigation({ introRef, timelineRef, toolsRef }) {
             <a
               href="#tools"
               onClick={toolsScroll}
-              className="font-semibold text-[#85586F] no-underline hover:text-black dark:text-[#5C527F] dark:hover:text-white md:ml-10"
+              className={`font-semibold no-underline hover:text-black ${
+                toolsActive
+                  ? "text-black dark:text-white"
+                  : "text-[#85586F] dark:text-[#5C527F]"
+              } dark:hover:text-white md:ml-10`}
             >
               Tools
             </a>
