@@ -1,11 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import timeline from "../data/timeline";
 import TimelineItem from "./TimelineItem";
 import Title from "./Title";
 
-function Timeline() {
+const Timeline = forwardRef((props, ref) => {
   return (
-    <div className="my-20 flex flex-col justify-center md:flex-row">
+    <div ref={ref} className="my-20 flex flex-col justify-center md:flex-row">
       <div className="w-full md:w-7/12">
         <Title>Timeline</Title>
         {timeline.map((item) => (
@@ -21,6 +21,8 @@ function Timeline() {
       </div>
     </div>
   );
-}
+});
+
+Timeline.displayName = "Timeline";
 
 export default Timeline;

@@ -1,9 +1,19 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
+import PropTypes from "prop-types";
 
-function Navigation() {
+function Navigation({ introRef, timelineRef, toolsRef }) {
   const [theme, setTheme] = useState(null);
   const [navVisible, setNavVisible] = useState(false);
   const navButtonRef = useRef();
+  const defaultNavState = {
+    scrollBehavior: { behavior: "smooth", block: "center" },
+    introActive: true,
+    timelineActive: false,
+    toolsActive: false,
+  };
+  const [navState, setNavState] = useState(defaultNavState);
+
+  const { scrollBehavior, introActive, timelineActive, toolsActive } = navState;
 
   useEffect(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -27,6 +37,50 @@ function Navigation() {
     }
   };
 
+  const isNavItemActive = (ref, offset) =>
+    ref.current.offsetTop - window.scrollY < window.innerHeight / offset;
+
+  const handleScroll = () => {
+    if (window.scrollY >= 0 && window.scrollY <= window.innerHeight / 3) {
+      setNavState({
+        ...navState,
+        introActive: true,
+        timelineActive: false,
+        toolsActive: false,
+      });
+    }
+
+    if (isNavItemActive(timelineRef, 2.5)) {
+      setNavState({
+        ...navState,
+        introActive: false,
+        timelineActive: true,
+        toolsActive: false,
+      });
+    }
+
+    if (isNavItemActive(toolsRef, 3)) {
+      setNavState({
+        ...navState,
+        introActive: false,
+        timelineActive: false,
+        toolsActive: true,
+      });
+    }
+  };
+
+  const scrollIntro = useCallback(() =>
+    introRef.current.scrollIntoView(scrollBehavior)
+  );
+
+  const scrollTimeline = useCallback(() =>
+    timelineRef.current.scrollIntoView(scrollBehavior)
+  );
+
+  const toolsScroll = useCallback(() =>
+    toolsRef.current.scrollIntoView(scrollBehavior)
+  );
+
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -38,6 +92,11 @@ function Navigation() {
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
+  });
+
+  useEffect(() => {
+    document.addEventListener("scroll", handleScroll);
+    return () => document.removeEventListener("scroll", handleScroll);
   });
 
   const sun = (
@@ -85,7 +144,12 @@ function Navigation() {
           <li>
             <a
               href="#profile"
-              className="font-semibold text-black no-underline hover:text-black dark:text-white dark:hover:text-white"
+              onClick={scrollIntro}
+              className={`font-semibold no-underline hover:text-black ${
+                introActive
+                  ? "text-black dark:text-white"
+                  : "text-[#85586F] dark:text-[#5C527F]"
+              } dark:hover:text-white`}
             >
               Profile
             </a>
@@ -93,7 +157,12 @@ function Navigation() {
           <li>
             <a
               href="#timeline"
-              className="font-semibold text-[#85586F] no-underline hover:text-black dark:text-[#5C527F] dark:hover:text-white md:ml-10"
+              onClick={scrollTimeline}
+              className={`font-semibold no-underline hover:text-black ${
+                timelineActive
+                  ? "text-black dark:text-white"
+                  : "text-[#85586F] dark:text-[#5C527F]"
+              } dark:hover:text-white md:ml-10`}
             >
               Timeline
             </a>
@@ -101,7 +170,12 @@ function Navigation() {
           <li>
             <a
               href="#tools"
-              className="font-semibold text-[#85586F] no-underline hover:text-black dark:text-[#5C527F] dark:hover:text-white md:ml-10"
+              onClick={toolsScroll}
+              className={`font-semibold no-underline hover:text-black ${
+                toolsActive
+                  ? "text-black dark:text-white"
+                  : "text-[#85586F] dark:text-[#5C527F]"
+              } dark:hover:text-white md:ml-10`}
             >
               Tools
             </a>
@@ -142,5 +216,17 @@ function Navigation() {
     </nav>
   );
 }
+
+Navigation.propTypes = {
+  introRef: PropTypes.any,
+  timelineRef: PropTypes.any,
+  toolsRef: PropTypes.any,
+};
+
+Navigation.defaultProps = {
+  introRef: "",
+  timelineRef: "",
+  toolsRef: "",
+};
 
 export default Navigation;

@@ -1,9 +1,9 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import Title from "./Title";
 
-function Tools() {
+const Tools = forwardRef((props, ref) => {
   return (
-    <div className="my-20 flex flex-col items-center justify-center">
+    <div ref={ref} className="my-20 flex flex-col items-center justify-center">
       <div className="w-full md:w-7/12">
         <Title>Tools</Title>
         {/* Frontend */}
@@ -282,6 +282,8 @@ function Tools() {
       </div>
     </div>
   );
-}
+});
+
+Tools.displayName = "Tools";
 
 export default Tools;
