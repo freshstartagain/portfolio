@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
+import PropTypes from "prop-types";
 
-function Navigation() {
+function Navigation({ introRef, timelineRef, toolsRef }) {
   const [theme, setTheme] = useState(null);
   const [navVisible, setNavVisible] = useState(false);
   const navButtonRef = useRef();
+  const scrollBehavior = { behavior: "smooth", block: "center" };
 
   useEffect(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -26,6 +28,18 @@ function Navigation() {
       setNavVisible(false);
     }
   };
+
+  const scrollIntro = useCallback(() =>
+    introRef.current.scrollIntoView(scrollBehavior)
+  );
+
+  const scrollTimeline = useCallback(() =>
+    timelineRef.current.scrollIntoView(scrollBehavior)
+  );
+
+  const toolsScroll = useCallback(() =>
+    toolsRef.current.scrollIntoView(scrollBehavior)
+  );
 
   useEffect(() => {
     if (theme === "dark") {
@@ -85,6 +99,7 @@ function Navigation() {
           <li>
             <a
               href="#profile"
+              onClick={scrollIntro}
               className="font-semibold text-black no-underline hover:text-black dark:text-white dark:hover:text-white"
             >
               Profile
@@ -93,6 +108,7 @@ function Navigation() {
           <li>
             <a
               href="#timeline"
+              onClick={scrollTimeline}
               className="font-semibold text-[#85586F] no-underline hover:text-black dark:text-[#5C527F] dark:hover:text-white md:ml-10"
             >
               Timeline
@@ -101,6 +117,7 @@ function Navigation() {
           <li>
             <a
               href="#tools"
+              onClick={toolsScroll}
               className="font-semibold text-[#85586F] no-underline hover:text-black dark:text-[#5C527F] dark:hover:text-white md:ml-10"
             >
               Tools
@@ -142,5 +159,17 @@ function Navigation() {
     </nav>
   );
 }
+
+Navigation.propTypes = {
+  introRef: PropTypes.any,
+  timelineRef: PropTypes.any,
+  toolsRef: PropTypes.any,
+};
+
+Navigation.defaultProps = {
+  introRef: "",
+  timelineRef: "",
+  toolsRef: "",
+};
 
 export default Navigation;

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-function Intro() {
+const Intro = forwardRef((props, ref) => {
   return (
-    <div className="flex flex-col items-center justify-center pb-6 pt-20 text-center">
+    <div
+      ref={ref}
+      className="flex flex-col items-center justify-center pb-6 pt-20 text-center"
+    >
       <h1 className="mb-1 text-7xl font-bold dark:text-white">Lester</h1>
       <p className="mb-3 text-base text-xl font-medium text-[#85586F] dark:text-[#5C527F]">
         Software & Data Engineer
@@ -21,6 +24,8 @@ function Intro() {
       </p>
     </div>
   );
-}
+});
+
+Intro.displayName = "Intro";
 
 export default Intro;

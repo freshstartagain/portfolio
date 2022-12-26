@@ -29,11 +29,11 @@ function TimelineItem({ year, title, company, duration, details }) {
 }
 
 TimelineItem.propTypes = {
-  year: PropTypes.any,
-  title: PropTypes.any,
-  company: PropTypes.any,
-  duration: PropTypes.any,
-  details: PropTypes.any,
+  year: PropTypes.string,
+  title: PropTypes.string,
+  company: PropTypes.string,
+  duration: PropTypes.string,
+  details: PropTypes.string,
 };
 
 TimelineItem.defaultProps = {
