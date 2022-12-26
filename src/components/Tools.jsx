@@ -3,7 +3,10 @@ import Title from "./Title";
 
 const Tools = forwardRef((props, ref) => {
   return (
-    <div ref={ref} className="my-20 flex flex-col items-center justify-center">
+    <div
+      ref={ref}
+      className="my-20 flex scroll-mt-72 flex-col items-center justify-center"
+    >
       <div className="w-full md:w-7/12">
         <Title>Tools</Title>
         {/* Frontend */}
