@@ -22,6 +22,7 @@
 
 <p align="center">
   <a href="#installation">Installation</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#acknowledgement">Acknowledgement</a>
 </p>
 
@@ -43,5 +44,5 @@ yarn run dev
 
 # Acknowledgement
 
-My inspiration for this project was the [tutorial](https://www.youtube.com/watch?v=b0pkpcD8Ms4) by ForrestKnight on YouTube. 
+My inspiration for this project was the [tutorial](https://www.youtube.com/watch?v=b0pkpcD8Ms4) by ForrestKnight on YouTube.
 His repository on GitHub can be found [here](https://github.com/ForrestKnight/minimal-portfolio).
