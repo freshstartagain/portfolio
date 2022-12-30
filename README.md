@@ -15,6 +15,9 @@
   <a target="_blank" href="https://github.com/freshstartagain/portfolio/actions/workflows/code_quality.yml" title="Code Quality">
     <img src="https://github.com/freshstartagain/portfolio/actions/workflows/code_quality.yml/badge.svg">
   </a>
+    <a target="_blank" href="https://github.com/freshstartagain/portfolio/actions/workflows/test.yml" title="Test">
+    <img src="https://github.com/freshstartagain/portfolio/actions/workflows/test.yml/badge.svg">
+  </a>
   <a target="_blank" href="https://github.com/freshstartagain/portfolio/actions/workflows/pages/pages-build-deployment" title="Deployment">
     <img src="https://github.com/freshstartagain/portfolio/actions/workflows/pages/pages-build-deployment/badge.svg">
   </a>
@@ -22,6 +25,8 @@
 
 <p align="center">
   <a href="#installation">Installation</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#test">Test</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#acknowledgement">Acknowledgement</a>
 </p>
@@ -40,6 +45,12 @@ yarn install
 
 # run dev server
 yarn run dev
+```
+
+## Test
+```console
+# run test
+yarn jest
 ```
 
 # Acknowledgement
