@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .jsx,.js src",
-    "prettier": "prettier --write src/components/",
+    "prettier": "prettier --write src",
     "test": "jest"
   },
   "dependencies": {
