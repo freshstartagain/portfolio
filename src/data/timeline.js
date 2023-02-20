@@ -1,5 +1,14 @@
 export default [
   {
+    id: "B89BD",
+    year: "2021",
+    title: "Software Engineer",
+    company: "Lex Machina",
+    duration: "Current",
+    details:
+      "Maintaining the frontend and backend of in-house tool using various technologies such as React, HTML, SCSS, Node, Python, and GCP.",
+  },
+  {
     id: "A98DB",
     year: "2020",
     title: "Data Engineer",
