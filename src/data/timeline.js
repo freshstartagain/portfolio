@@ -1,10 +1,19 @@
 export default [
   {
+    id: "A98CE",
+    year: "2021",
+    title: "Full Stack Engineer",
+    company: "Talino Venture Labs",
+    duration: "Current",
+    details:
+      "Creating the user interface and ensuring its usability and managing the system's logic to ensure accurate and smooth functionality, including tasks like database management and server administration.",
+  },
+  {
     id: "B89BD",
     year: "2021",
     title: "Software Engineer",
     company: "Lex Machina",
-    duration: "Current",
+    duration: "1 year 6 months",
     details:
       "Maintaining the frontend and backend of in-house tool using various technologies such as React, HTML, SCSS, Node, Python, and GCP.",
   },
