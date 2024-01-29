@@ -1,7 +1,7 @@
 export default [
   {
     id: "A98CE",
-    year: "2021",
+    year: "2023",
     title: "Full Stack Engineer",
     company: "Talino Venture Labs",
     duration: "Current",
