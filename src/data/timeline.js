@@ -2,11 +2,11 @@ export default [
   {
     id: "A98CE",
     year: "2023",
-    title: "Full Stack Engineer",
+    title: "Senior Full Stack Engineer",
     company: "Talino Venture Labs",
-    duration: "Current",
+    duration: "1 year 1 month",
     details:
-      "Creating the user interface and ensuring its usability and managing the system's logic to ensure accurate and smooth functionality, including tasks like database management and server administration.",
+      "I have developed a CloudWatch dashboard for monitoring Kubernetes container resources, replacing Grafana, and assisted in maintaining Terraform modules for AWS infrastructure. I collaborated on building an app to streamline customer onboarding for SMEs and led a data ingestion project that transferred millions of rows into Snowflake. My responsibilities also included conducting code reviews, implementing tests and CI/CD pipelines, documenting project processes, and researching new technologies for software development. Additionally, I led backend development for an e-commerce website using Odoo.",
   },
   {
     id: "B89BD",
